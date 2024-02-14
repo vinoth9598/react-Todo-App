@@ -1,0 +1,13 @@
+.Dropdown{
+    background-color: white;
+}
+
+.com{
+    font-size: 16px;
+    padding:5px;
+}
+.not{
+    font-size: 16px;
+    background-color: orangered;
+    padding: 5px;
+}
