@@ -1,14 +1,19 @@
 import './Dropdown.css'
 
 
-function FilterButton({filterTodoList,filter}) {
+function FilterButton(props) {
+
+  const onFilterValueChange=(event)=>{
+     
+      props.filterValueselected(event.target.value);
+  }
 
   return (
     <div>
        <label>Status Filter :</label>
-       <select name='Status'
-        value={filter}
-        onChange={filterTodoList}>
+       <select 
+        name='isComplete'
+        onChange={onFilterValueChange}>
             <option value="All" >All</option>
             <option value="Complete">Completed</option>
             <option value="Not complete">Not Completed</option>

@@ -1,13 +1,7 @@
-import { useState } from "react";
 
 
-function Alltodo({TodoList, delTodoList,editTodoList,filterValue}) {
 
-  const [statusfilter,setStatusFilter]=useState('All');
-
-  const handleStatus=(e)=>{
-    setStatusFilter(e.target.value);
-  }
+function Alltodo({TodoList, delTodoList,editTodoList}) {
 
 
   return (
