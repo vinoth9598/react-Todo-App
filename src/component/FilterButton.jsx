@@ -10,7 +10,7 @@ function FilterButton(props) {
 
   return (
     <div>
-       <label>Status Filter :</label>
+       <label className='status mx-4'>Status Filter :</label>
        <select 
         name='isComplete'
         onChange={onFilterValueChange}>

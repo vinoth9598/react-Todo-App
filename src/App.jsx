@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import "./component/App.css";
-
 import Alltodo from "./component/AllTodo";
+
 
 
 function App(){
@@ -11,12 +11,17 @@ function App(){
   const [newdescription,setNewDescription]=useState("");
   const [editTodo,setEditTodo]=useState([]);
   
-
+  
   function handleAddTodo(){
     if((newtitle!=="")&&(newdescription!=="")){
       let updateTodos={
         title:newtitle,
         description:newdescription,
+        Status:<select>
+          <option>complete</option>
+          <option>not complete</option>
+          </select>
+        
       }
       let newTodos=[...allTodos]
         newTodos.push(updateTodos)
@@ -36,6 +41,7 @@ function App(){
     let updateEditTodo={
       title:updateName,
       description:updateDesc,
+    
     }
     let newEditTodo=[...editTodo];
     newEditTodo.push(updateEditTodo);
@@ -58,11 +64,7 @@ function App(){
     }
   },[])
   
-  const onFilterValueSelect=(filterValue)=>{
-      console.log(filterValue);
 
-  }
-  
 
   return(
     <div>
@@ -100,13 +102,12 @@ function App(){
                   <div className="col">
                     My Todos 
                   </div>
-                  <div className="status">
-                      <FilterButton filterValueselected={onFilterValueSelect} />
-                  </div>   
+                   
               </div>
 
         </div>
-       <Alltodo TodoList={allTodos} delTodoList={handleDelTodo} editTodoList={handleEditTodo}   />
+     
+       <Alltodo TodoList={allTodos} delTodoList={handleDelTodo} editTodoList={handleEditTodo} />
     </div>
   )
 }
